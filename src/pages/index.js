@@ -1,8 +1,9 @@
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import Layout from "@/components/Layout";
+import { Layout, siteTitle } from "@/components/Layout";
 import utilStyles from "@/styles/utils.module.css";
 import { getPostsData } from "@/../lib/post.js";
+import Head from "next/head";
 
 // SSG の場合
 export async function getStaticProps() {
@@ -19,7 +20,10 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <>
-      <Layout>
+      <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
         <section>
           <p className={utilStyles.headingMd}>
             私は、元航空自衛隊で現役ITエンジニアです。
