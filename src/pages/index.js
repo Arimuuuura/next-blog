@@ -7,7 +7,7 @@ import { getPostsData } from "@/../lib/post.js";
 // SSG の場合
 export async function getStaticProps() {
   const allPostsData = getPostsData();
-  console.log(allPostsData);
+  // console.log(allPostsData);
 
   return {
     props: {
